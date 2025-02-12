@@ -2,30 +2,28 @@ import { defineThemeConfig } from './types'
 
 export default defineThemeConfig({
   site: 'https://nordlys.fjelloverflow.dev',
-  title: "Snowden's Vault",
-  description: 'My personal Domain',
+  title: 'Nordlys',
+  description: 'A minimal Astro blog theme',
   author: 'FjellOverflow',
   navbarItems: [
     { label: 'Blog', href: '/posts' },
+    //{ label: 'Projects', href: '/projects' },
     { label: 'Tags', href: '/tags' },
-    { label: 'Walkthroughs', href: 'https://blog.snowdensvault.fyi/writeups' },
-    { label: 'Terminal', href: 'https://terminalcv.snowdensvault.fyi/' },
-    { label: 'About', href: '/about' }
+    { label: 'About', href: '/about' },
+    {
+      label: 'Other pages',
+      children: [
+        { label: 'Landing page', href: '/' },
+        { label: '404 page', href: '/404' },
+        { label: 'Author: FjellOverflow', href: '/authors/FjellOverflow' },
+        { label: 'Tag: documentation', href: '/tags/documentation' }
+      ]
+    }
   ],
   footerItems: [
     {
       icon: 'tabler--brand-github',
-      href: 'https://github.com/MasterChief220',
-      label: 'Github'
-    },
-    {
-      icon: 'tabler--brand-medium',
-      href: 'https://medium.com/@bassam-khan',
-      label: 'Github'
-    },
-    {
-      icon: 'tabler--brand-linkedin',
-      href: 'https://www.linkedin.com/in/mbassamkhan/',
+      href: 'https://github.com/FjellOverflow/nordlys',
       label: 'Github'
     },
     {
