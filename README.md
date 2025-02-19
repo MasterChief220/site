@@ -1,32 +1,8 @@
-<p align="center">
-  <a href="https://nordlys.fjelloverflow.dev">
-    <img alt="logo" src="./public/favicon.svg" height="64">
-  </a>
-</p>
+#Source
+https://github.com/FjellOverflow/nordlys
 
-<h1 align="center">
-  <a href="https://nordlys.fjelloverflow.dev">Nordlys</a>
-</h1>
 
-<p align="center">
-  A minimal Astro blog theme
-</p>
 
-<p align="center">
-  <img src="./public/preview.png" width="85%"/>
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/github/package-json/v/FjellOverflow/Nordlys?label=Version&color=success"/>
-  &ensp;
-  <img src="https://img.shields.io/github/license/FjellOverflow/Nordlys?label=License&color=success"/>
-  &ensp;
-  <img src="https://img.shields.io/github/actions/workflow/status/FjellOverflow/Nordlys/cd.yaml?branch=main&label=Build"/>
-</p>
-
-<p align="center">
-  <a href="https://nordlys.fjelloverflow.dev">Preview</a> |
-  <a href="#features">Features</a> |
   <a href="#installation">Installation</a> |
   <a href="#getting-started">Getting started</a> |
   <a href="#documentation">Documentation</a>
