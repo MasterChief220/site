@@ -8,24 +8,6 @@ https://github.com/FjellOverflow/nordlys
   <a href="#documentation">Documentation</a>
 </p>
 
-## Features
-
-<div align="center">
-  <img src="https://github.com/user-attachments/assets/ee5ab8ef-8c63-4810-a53f-622643e9e7a8" width="50%"/>
-  <div>Nordlys scores 100% on <a href="https://developer.chrome.com/docs/lighthouse/performance/performance-scoring/">Lighthouse</a></div>
-</div>
-
-- ⚙️ Easily configurable
-- 🔎 Built-in Search
-- 📱 Resonsive & mobile friendly
-- 🧑‍🦯 Accessible
-- 🎨 Built-in & custom color schemes
-- 🌙 Light & Dark mode
-- 🎁 Image zoom, generated _Table of Contents_, reading time & more ...
-- 👨‍💻 **For developers**:
-  - Best practices
-  - Minimal & up-to-date dependencies
-  - Strongly typed & linted
 
 ## Installation
 
