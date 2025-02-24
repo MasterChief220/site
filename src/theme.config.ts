@@ -46,9 +46,11 @@ export default defineThemeConfig({
   scrollProgress: false,
   scrollToTop: true,
   tagIcons: {
-    tailwindcss: 'tabler--brand-tailwind',
-    astro: 'tabler--brand-astro',
-    documentation: 'tabler--book'
+    documentation: 'tabler--book',
+    cybersecurity: 'tabler--shield-lock',
+    guides: 'tabler--manual-gearbox',
+    blueteam: 'tabler--shield',
+    siem:'tabler--letter-s-small'
   },
   shikiThemes: {
     light: 'vitesse-light',
