@@ -50,7 +50,8 @@ export default defineThemeConfig({
     cybersecurity: 'tabler--shield-lock',
     guides: 'tabler--manual-gearbox',
     blueteam: 'tabler--shield',
-    siem:'tabler--letter-s-small'
+    siem:'tabler--letter-s-small',
+    forensics:'tabler--microscope'
   },
   shikiThemes: {
     light: 'vitesse-light',
