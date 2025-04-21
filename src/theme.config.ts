@@ -1,7 +1,7 @@
 import { defineThemeConfig } from './types'
 
 export default defineThemeConfig({
-  site: 'https://nordlys.fjelloverflow.dev',
+  site: 'https://snowdensvault.fyi/',
   title: "Snowden's Vault",
   description: 'My personal Domain',
   author: 'FjellOverflow',
@@ -40,7 +40,7 @@ export default defineThemeConfig({
   mode: 'dark',
   modeToggle: true,
   colorScheme: 'scheme-mono',
-  openGraphImage: undefined,
+  openGraphImage: '@/assets/opengraphcimg.png',
   postsPerPage: 4,
   projectsPerPage: 3,
   scrollProgress: false,
