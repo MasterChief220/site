@@ -15,7 +15,7 @@ export default defineThemeConfig({
       children: [
         { label: 'Landing page', href: '/' },
         { label: '404 page', href: '/404' },
-        { label: 'Author: FjellOverflow', href: '/authors/FjellOverflow' },
+        { label: 'Author: BassamKhan', href: '/authors/BassamKhan' },
         { label: 'Tag: documentation', href: '/tags/documentation' }
       ]
     }

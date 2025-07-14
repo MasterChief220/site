@@ -2,6 +2,7 @@
 title: Recovering the Unrecoverable- A Forensic Approach to Windows Recovery
 description: In this guide, I'll show you how to boot into a corrupted Windows OS, reset your Windows password, and recover deleted files. 
 publishedDate: 2025-01-28
+author: Bassam Khan
 tags:
   - guides
   - Forensics

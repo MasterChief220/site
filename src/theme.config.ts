@@ -4,7 +4,7 @@ export default defineThemeConfig({
   site: 'https://snowdensvault.fyi/',
   title: "Snowden's Vault",
   description: 'My personal Domain',
-  author: 'FjellOverflow',
+  author: 'Bassam Khan',
   navbarItems: [
     { label: 'Blog', href: '/posts' },
     { label: 'Tags', href: '/tags' },

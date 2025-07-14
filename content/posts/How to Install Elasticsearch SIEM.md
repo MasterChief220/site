@@ -2,6 +2,7 @@
 title: How to Install Elasticsearch SIEM
 description: Setting up ELK Stack
 publishedDate: 2024-10-14
+author: Bassam Khan
 tags:
   - Guides
   - SIEM

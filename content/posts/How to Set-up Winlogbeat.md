@@ -2,6 +2,7 @@
 title: How to set up Winlogbeat
 description: Setting up Windows Logs for ELK Stack
 publishedDate: 2024-11-10
+author: Bassam Khan
 tags:
   - guides
   - SIEM
