@@ -28,11 +28,17 @@ export default defineThemeConfig({
       href: 'https://www.linkedin.com/in/mbassamkhan/',
       label: 'Github'
     },
+     {
+      icon: 'tabler--circle-dotted-letter-g',
+      href: 'https://www.goodreads.com/user/show/94213916-bassam-khan',
+      label: 'Goodreads'
+},
     {
       icon: 'tabler--rss',
       href: '/feed.xml',
       label: 'RSS feed'
     }
+   
   ],
 
   // optional settings
