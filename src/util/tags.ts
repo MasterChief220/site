@@ -6,27 +6,32 @@ import { getProjects } from '@/util/projects'
 export const sortTags = (t1: ResolvedTag, t2: ResolvedTag) =>
   t1.tag.localeCompare(t2.tag)
 
-export const resolveTags = (rawTags: string[]): ResolvedTag[] => {
-  const resolvedTags = [...new Set(rawTags)].map((t) => {
-    const tag = t.toLowerCase()
+const normalize = (t?: string) => (t ?? '').trim().toLowerCase()
 
-    return {
-      tag,
-      icon: config.tagIcons[tag] || 'tabler--tag'
-    }
-  })
+/** Normalize first, then dedupe */
+export const resolveTags = (rawTags: string[] = []): ResolvedTag[] => {
+  const normalized = rawTags
+    .map(normalize)
+    .filter(Boolean)
 
-  resolvedTags.sort(sortTags)
+  const unique = Array.from(new Set(normalized))
 
-  return resolvedTags
+  const resolved = unique.map((tag) => ({
+    tag,
+    icon: config.tagIcons[tag] || 'tabler--tag',
+  }))
+
+  return resolved.sort(sortTags)
 }
 
 export const generateTags = async (): Promise<ResolvedTag[]> => {
-  const allTags = [...(await getPosts()), ...(await getProjects())].flatMap(
-    (p) => p.data.tags
-  )
+  const posts = await getPosts()
+  const projects = await getProjects()
 
-  return resolveTags([...new Set(allTags)])
+  const allTags = [...posts, ...projects]
+    .flatMap((p) => p?.data?.tags ?? [])
+
+  return resolveTags(allTags)
 }
 
 export const getTagUsage = async (tag: string): Promise<number> =>
