@@ -46,7 +46,7 @@ export default defineThemeConfig({
   mode: 'dark',
   modeToggle: true,
   colorScheme: 'scheme-mono',
-  openGraphImage: '@/assets/opengraphcimg.png',
+  openGraphImage: '/opengraphcimg.png',
   postsPerPage: 4,
   projectsPerPage: 3,
   scrollProgress: false,
