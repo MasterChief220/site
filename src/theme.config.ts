@@ -57,7 +57,11 @@ export default defineThemeConfig({
     guides: 'tabler--manual-gearbox',
     blueteam: 'tabler--shield',
     siem:'tabler--letter-s-small',
-    forensics:'tabler--microscope'
+    forensics:'tabler--microscope',
+    politics:'tabler--world',
+    history: 'tabler--book',
+    philosophy: 'tabler--brain',
+    ethics: 'tabler--scale'
   },
   shikiThemes: {
     light: 'vitesse-light',
