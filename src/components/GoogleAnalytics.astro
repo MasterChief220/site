@@ -1,0 +1,40 @@
+---
+const GA_ID = import.meta.env.PUBLIC_GA_ID;
+const ENABLED = import.meta.env.PROD && !!GA_ID;
+---
+
+{ENABLED && (
+  <>
+    <!-- GA4 loader -->
+    <script
+      is:inline
+      async
+      src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+    ></script>
+
+    <!-- Initialize GA with ID passed via data attribute (safe in inline scripts) -->
+    <script is:inline data-ga-id={GA_ID}>
+      (function () {
+        var GA_ID = document.currentScript && document.currentScript.dataset.gaId;
+        if (!GA_ID) return;
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        window.gtag = window.gtag || gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { page_path: location.pathname + location.search });
+      })();
+    </script>
+
+    <!-- Track Astro client-side navigations -->
+    <script is:inline>
+      document.addEventListener('astro:page-load', () => {
+        if (window.gtag) {
+          window.gtag('config',
+            (document.querySelector('script[data-ga-id]') || {}).dataset?.gaId,
+            { page_path: location.pathname + location.search }
+          );
+        }
+      });
+    </script>
+  </>
+)}
