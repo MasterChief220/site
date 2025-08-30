@@ -28,7 +28,6 @@ https://github.com/FjellOverflow/nordlys
 
 The look and feel of the theme are configured in `theme.config.ts`. Make sure to adjust the title, author, URL, and color scheme to your preferences. Defaults are provided for most settings.
 
-All content is written in Markdown or MDX. Adding new pages, blog posts, or projects is as simple as creating a `my-latest-post.md` file in the appropriate directory and adjusting the frontmatter. For specific properties that can or need to be set, refer to the provided examples.
 
 ## Documentation
 
