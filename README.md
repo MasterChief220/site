@@ -36,3 +36,4 @@ The theme is self-documenting. Just head over to [nordlys.fjelloverflow.dev](htt
 ## Helpful Tips
 
 To edit tag icons edit the `theme.config.ts` file
+

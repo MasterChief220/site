@@ -9,7 +9,7 @@ export default defineThemeConfig({
     { label: 'Blog', href: '/posts' },
     { label: 'Tags', href: '/tags' },
     { label: 'Walkthroughs', href: 'https://blog.snowdensvault.fyi/writeups' },
-    { label: 'Terminal', href: 'https://terminalcv.snowdensvault.fyi/' },
+   // { label: 'Terminal', href: 'https://terminalcv.snowdensvault.fyi/' },
     { label: 'About', href: '/about' }
   ],
   footerItems: [
