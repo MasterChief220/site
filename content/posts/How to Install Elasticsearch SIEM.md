@@ -38,21 +38,21 @@ Now we will run this command `sudo apt-get update && sudo apt-get install elasti
 ![Elasticsearch Installed](attachments/How to Install Elasticsearch SIEM- Elasticsearch installed.png)
 We need to now make some changes to the config file. Before you do that however we need to first ensure some things. If you're running the Linux system on a virtual machine like Oracle VirtualBox or VMWare Workstation you need to ensure that your host system and the VM can communicate with each other i.e their IPs are visible to each other. To do this you need to run `ip addr` command in the terminal . 
 
-![IP Address Output](@/assets/blog/blog1ipaddr.png)
+![IP Address Output](@/assets/blog/2025/blog1ipaddr.png)
 
 Now as you can see the IP address of my machine is 192.168.240.128. I need to make sure my windows machine can communicate with it. For that we will open up the terminal on Windows and run the following command. `ping 192.168.240.128` . If the ping succeeds then we can go on. If it does not then you need to go into your virtual machine settings and change the network settings from NAT to Bridged Adapter. For virtual box the settings are here:  
-![How to Install Elasticsearch SIEM - NAT Settings](@/assets/blog/blog1natsettings.png) 
+![How to Install Elasticsearch SIEM - NAT Settings](@/assets/blog/2025/blog1natsettings.png) 
 
 Now we will open the config file and make some changes. To do that run the following command `sudo vi /etc/elasticsearch/elasticsearch.yml` . I am using Vim but you can use nano or any other editor you feel comfortable with.  
 
 Scroll down to the config file until you see the Network Section. There change the network.host Ip address to your ip address. My ip right now is 192.168.240.128 but you should change it to your machine ip. Also comment in the line.  
-![How to Install Elasticsearch SIEM - Network-host](@/assets/blog/blog1networkhost.png)
+![How to Install Elasticsearch SIEM - Network-host](@/assets/blog/2025/blog1networkhost.png)
 It should look like this. 
 Now scroll further down until you see the discovery section and remove host 1 and 2 and instead enter this : 
-![How to Install Elasticsearch SIEM - Discovery-hosts](@/assets/blog/blog1discovery.png)
+![How to Install Elasticsearch SIEM - Discovery-hosts](@/assets/blog/2025/blog1discovery.png)
 So basically enter your machine ip there. Now we will scroll down further until we come across security auto configuration. Here set every true value to false. 
 
-![How to Install Elasticsearch SIEM -Xpack security](@/assets/blog/blog1xpack.png)
+![How to Install Elasticsearch SIEM -Xpack security](@/assets/blog/2025/blog1xpack.png)
 Once it looks like this save the file. Now we will start elasticsearch 
 
 
@@ -62,7 +62,7 @@ Now once you're done we will use the following commands to start elasticsearch.
 `sudo systemctl start elasticsearch.service` 
 
 Now by default Elasticsearch runs on the loopback address and port 9200. Hence after Elasticsearch starts we can ensure whether it's listening on the port by using the following command. `curl 127.0.0.1:9200`  . 
-![How to Install Elasticsearch SIEM - elastic curl](@/assets/blog/blog1elasticurl.png)
+![How to Install Elasticsearch SIEM - elastic curl](@/assets/blog/2025/blog1elasticurl.png)
 Now once we get an output that looks like the above we can rest easy knowing that elasticsearch is working. To test whether we can access it from our windows machine run curl 192.168.240.128:9200 on the windows terminal. We will see a similar output to the one above if it installed alright. 
 
 # Install Kibana:
@@ -91,7 +91,7 @@ Scroll to the heading which says kibana. There change the host paramter from loc
 Now we will run the auditbeat setup. This basically validates whether auditbeat can connect to elasticsearch and kibana. The command is `sudo auditbeat -e setup`  
 
 Most of the output is of not any use to us but 2 lines in particular need to be paid attention to.  
-![How to Install Elasticsearch SIEM - Auditbeat](@/assets/blog/blog1auditbeat.png)
+![How to Install Elasticsearch SIEM - Auditbeat](@/assets/blog/2025/blog1auditbeat.png)
 
 If for some reason you do not see these highlighted lines then there was some issue and you need to fix it. 
 
@@ -101,12 +101,12 @@ If it's successful go ahead and start auditbeat using:
 To ensure whether everything is working perfectly we will go the dashboard which we can access using the browser on both the Windows Machine and the Linux one. 
 
 Entering the address in the browser yields the following: 
-![How to Install Elasticsearch SIEM - Elastic SIEM](@/assets/blog/blog1SIEM.png)
+![How to Install Elasticsearch SIEM - Elastic SIEM](@/assets/blog/2025/blog1SIEM.png)
 
 Since SSL and security options are not configured there will be no https address but a http. A following tutorial will cover that.  
 
 However to check if auditbeat is sending logs we will open the left menu by clicking on the horizontal lines and then go to the discover section within Analytics. 
 If everything is working and sending logs we should see something like the following: 
-![How to Install Elasticsearch SIEM - ELK SIEM](@/assets/blog/blog1ELK.png)
+![How to Install Elasticsearch SIEM - ELK SIEM](@/assets/blog/2025/blog1ELK.png)
 
 The SIEM has been setup. Further tutorials will explore the Dashboard in more detail and also how to send logs from the Windows Machine to the SIEM Tool using Winlogbeat and Sysmon. 

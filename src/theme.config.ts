@@ -61,7 +61,13 @@ export default defineThemeConfig({
     politics:'tabler--world',
     history: 'tabler--book',
     philosophy: 'tabler--brain',
-    ethics: 'tabler--scale'
+    ethics: 'tabler--scale',
+    surveillance: 'tabler--radar',
+    sidechannel: 'tabler--activity',
+    privacy: 'tabler--eye-off',
+    osint: 'tabler--search',
+    redteam: 'tabler--target',
+    vapt: 'tabler--bug'
   },
   shikiThemes: {
     light: 'vitesse-light',

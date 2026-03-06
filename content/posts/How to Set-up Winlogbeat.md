@@ -18,7 +18,7 @@ In the previous tutorial, I explained how to setup Elasticsearch and send logs f
 To install Winlogbeat we first need to make use of Sysmon. Sysmon is a Windows system monitoring tool that provides detailed logs of system activity, such as process creation, network connections, and file changes. 
 
 We need to download [Sysmon](https://learn.microsoft.com/en-us/sysinternals/downloads/sysmon) from here and extract it into Program files, making its folder. We will download sysmon from there by clicking here: 
-![How to Install Winlogbeat- Sysmon Download](@/assets/blog/blog2sysmondown.png)
+![How to Install Winlogbeat- Sysmon Download](@/assets/blog/2025/blog2sysmondown.png)
 
 After downloading it we will extract it and then copy the files into a Sysmon folder (after creating it) inside *Program Files*. 
 
@@ -42,7 +42,7 @@ Brief Overview of the command:
 > In some cases terminal might not run the command in which case run it using `.\Sysmon -i sysmonconfig.xml -accepteula -h sha256 -l -n`
 
 We will now open the Services section in Windows. There we need to ensure Sysmon is running. If not, then we will click on it and start it from there. 
-![How to Install Winlogbeat - Sysmon Running](@/assets/blog/blog2sysmonrunning.png) 
+![How to Install Winlogbeat - Sysmon Running](@/assets/blog/2025/blog2sysmonrunning.png) 
 
 # Winlogbeat 
 Now that we have properly installed Sysmon, it is time to send logs to Elasticsearch. **Winlogbeat**, is part of the Elastic Beats family and is designed to send Windows event logs to Elasticsearch.
@@ -54,7 +54,7 @@ Now making sure we are running PowerShell as admin we will cd into the Winlogbea
 > If we get the error script execution is disabled on your system, you need to set the execution policy for the current session to allow the script to run. For example: `PowerShell.exe -ExecutionPolicy UnRestricted -File ./install-service-winlogbeat.ps1`. Enter R when prompted and click enter. 
 
 If the command works then we will see the following:  
-![How to Install Winlogbeat - Winlogbeat Install](@/assets/blog/blog2winlogbeatinst.png) 
+![How to Install Winlogbeat - Winlogbeat Install](@/assets/blog/2025/blog2winlogbeatinst.png) 
 
 Now we head to the config file in the Winlogbeat directory and change some values. The file name is Winlogbeat.yml. You can open it using Notepad or any editor you want. 
 
@@ -68,7 +68,7 @@ We will once again open PowerShell as admin and run the following command:  `./w
 > Make sure Kibana and Elasticsearch are running on the Linux Machine. You can check them using `sudo service elasticsearch status` and `sudo service kibana status`. If they are not running then start them using start in place of status. 
 
 If the above command was successful then you should get something like the following output: 
-![How to Install Winlogbeat - Winlogbeat status](@/assets/blog/blog2winlogbeatstat.png) 
+![How to Install Winlogbeat - Winlogbeat status](@/assets/blog/2025/blog2winlogbeatstat.png) 
 
 
 Now login to your Elasticsearch Dashboard and go to Discover under Analytics. There on the top left corner, you should see a Winlogbeat section. Click on it and you should see the logs. 
@@ -77,7 +77,7 @@ Now login to your Elasticsearch Dashboard and go to Discover under Analytics. Th
 >If you do not see anything then ensure Winlogbeat and Sysmon are running by checking services on Windows. If they aren't then run them from there or by running their corresponding executable.  
 
 If everything worked perfectly you should see the following on the dashboard URL. Which should be [_http://YOURIP:5601._](http://YOURIP:5601.)
-![How to Install Winlogbeat - Elasticsearch](@/assets/blog/blog2elasticsearch.png) 
+![How to Install Winlogbeat - Elasticsearch](@/assets/blog/2025/blog2elasticsearch.png) 
 
 # Conclusion 
 In essence, this guide helped configure Sysmon to collect system logs and set up Winlogbeat to forward those logs to Elasticsearch, enabling efficient log management and real-time monitoring with Kibana.

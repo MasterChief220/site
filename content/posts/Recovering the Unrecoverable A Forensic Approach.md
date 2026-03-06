@@ -82,7 +82,7 @@ In this guide, we will discuss the following tools and techniques:
 In case you’re here for the password reset method feel free to skip to the next section. 
 If our Windows doesn’t boot and/or shows this screen:
 
-![image.png](@/assets/blog/blog3/image.png)
+![image.png](@/assets/blog/2025/blog3/image.png)
 
 It is a sign that our Windows was corrupted. 
 
@@ -94,7 +94,7 @@ A Live USB allows us to boot an operating system directly from it, enabling us t
 
 To get started, we can download the Live version of Kali from the provided link. Once we have the ISO file, we can use Rufus to create a bootable USB drive. Simply open Rufus, select the ISO image, and choose the USB drive you want to use. We will allocate 2GB of space for persistence, as we'll be booting in Persistent Mode (if your goal is only to reset your password, you can safely skip this step). The other options can remain at their default settings.
 
-![image.png](@/assets/blog/blog3/image%201.png)
+![image.png](@/assets/blog/2025/blog3/image%201.png)
 
 Wait for it to complete and then close it. 
 
@@ -102,7 +102,7 @@ Wait for it to complete and then close it.
 
 Depending on your PC or Laptop boot from the USB. If Rufus made the Live USB properly you will get the following screen:
 
-![image.png](@/assets/blog/blog3/image%202.png)
+![image.png](@/assets/blog/2025/blog3/image%202.png)
 
 Select the Live USB Persistence Option (or the Encrypted one if you want to play it safe). 
 
@@ -190,11 +190,11 @@ sudo partprobe /dev/sdX  # Refresh partition table
 
 I am using Kali in a VM for this current example but the concept can be applied to Kali Live. 
 
-![image.png](@/assets/blog/blog3/image%203.png)
+![image.png](@/assets/blog/2025/blog3/image%203.png)
 
 As you can see, I have 2 drives connected to the VM. The useful information is just the Device path, which is */dev/sda1* and */dev/sdb* in this case. My USB drive has the path */dev/sdb* in this case, and we will make a clone of the USB device in this example. I made a text file on the USB drive named test.txt and added the word "test” to it. 
 
-![image.png](@/assets/blog/blog3/image%204.png)
+![image.png](@/assets/blog/2025/blog3/image%204.png)
 
 This is the command I ran to clone my USB drive to my home directory in a file called file.img. It will take some time to complete. 
 
@@ -202,17 +202,17 @@ You do not have to follow through with this. This is just to show you that disk 
 
 After the command completes I will delete the file:
 
-![Before ](@/assets/blog/blog3/e0a06b36-b7c5-4be8-8dca-38294b48cb30.png)
+![Before ](@/assets/blog/2025/blog3/e0a06b36-b7c5-4be8-8dca-38294b48cb30.png)
 
 Before 
 
-![After]@/assets/blog/blog3/(3cce2023-4ba8-428b-92b1-61c5c5dc5231.png)
+![After]@/assets/blog/2025/blog3/(3cce2023-4ba8-428b-92b1-61c5c5dc5231.png)
 
 After
 
 Now I will run the following command :
 
-![image.png](@/assets/blog/blog3/image%205.png)
+![image.png](@/assets/blog/2025/blog3/image%205.png)
 
 Once the command is done we’ll get our file back showing that the image works properly. 
 
@@ -255,7 +255,7 @@ If this doesn’t run then foremost wasn’t installed successfully.
 
 Now I will also place two gif files in the USB and then I will delete them. The reason I’m using gif files is because I do not want it to recover a large number of files from before. I also created a directory since foremost requires an empty directory to output it’s files
 
-![image.png](@/assets/blog/blog3/image%206.png)
+![image.png](@/assets/blog/2025/blog3/image%206.png)
 
 I will run the following command to run foremost:
 
@@ -297,7 +297,7 @@ sudo foremost -t gif -q -v -o recovered -i imagepath
 
 I interrupted the command after it found two gifs since I only had 2 files. You can wait for the command to finish. One limitation with foremost is that it does not recover file names. 
 
-![image.png](@/assets/blog/blog3/image%207.png)
+![image.png](@/assets/blog/2025/blog3/image%207.png)
 
 Foremost has the above structure for outputting files. The gif folder contains the same gifs I had deleted. 
 
@@ -311,17 +311,17 @@ Photorec comes preinstalled with Kali and can be run by just writing photorec in
 
 After running it the following screen pops up:
 
-![image.png](@/assets/blog/blog3/image%208.png)
+![image.png](@/assets/blog/2025/blog3/image%208.png)
 
 We will choose our USB Drive. 
 
 It then asks us whether we want to look for files in a particular partition or the whole USB drive. I chose the whole USB Drive but you may choose a specific partition according to your needs. However, before selecting any option you will see an options section at the bottom. 
 
-![image.png](@/assets/blog/blog3/image%209.png)
+![image.png](@/assets/blog/2025/blog3/image%209.png)
 
 We will select that and it will show us the following screen: 
 
-![image.png](@/assets/blog/blog3/image%2010.png)
+![image.png](@/assets/blog/2025/blog3/image%2010.png)
 
 I have left it at default but you may change it as needed. 
 
@@ -334,21 +334,21 @@ Expert mode toggles further options which we will not elaborate on in this tutor
 
 After proceeding to the previous menu we will select File Options:
 
-![image.png](@/assets/blog/blog3/image%2011.png)
+![image.png](@/assets/blog/2025/blog3/image%2011.png)
 
 We can select the file types we want it to look for. I have again left it at default. We will now once again go back to the main menu and select the whole disk (or partition) we want to recover files from.  
 
 After that we get a page asking us the filesystem of the USB. We need to pick the correct option. In most cases it will be the second option. In my case since it is FAT I will also pick the second option. 
 
-![image.png](@/assets/blog/blog3/image%2012.png)
+![image.png](@/assets/blog/2025/blog3/image%2012.png)
 
 We then choose the destination drive i.e where to store the files to. It is recommended to pick a destination not on the drive we are recovering files from. 
 
-![image.png](@/assets/blog/blog3/image%2013.png)
+![image.png](@/assets/blog/2025/blog3/image%2013.png)
 
 We can stop this anytime we want and then we will go to the directory which we selected to view the files. 
 
-![image.png](@/assets/blog/blog3/image%2014.png)
+![image.png](@/assets/blog/2025/blog3/image%2014.png)
 
 As you can see photorec does not recover file names either. 
 
@@ -370,17 +370,17 @@ sudo apt-get install libc6-i386 #dependencies
 
 Proceed through selecting your language and giving Root user GUI access:
 
-![image.png](@/assets/blog/blog3/image%2015.png)
+![image.png](@/assets/blog/2025/blog3/image%2015.png)
 
 We will be then greeted by the following screen:
 
-![image.png](@/assets/blog/blog3/image%2016.png)
+![image.png](@/assets/blog/2025/blog3/image%2016.png)
 
 You can now select according to your needs but I will select the logical disks option and my USB Drive. 
 
 We will be greeted by the following screen now:
 
-![image.png](@/assets/blog/blog3/image%2017.png)
+![image.png](@/assets/blog/2025/blog3/image%2017.png)
 
 As you can see it has already recovered some files. It has also managed to recover some file names though they may not all be correct. To recover further files we will run a Full Volume Scan. 
 
