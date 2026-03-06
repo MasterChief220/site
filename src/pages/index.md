@@ -8,4 +8,4 @@ logo: true
 Welcome!\
 Explore my main [Blog](/posts) or browse the CTF [Walkthroughs](https://blog.snowdensvault.fyi/writeups).
 
-You can view my Portfolio at [Resume Site](https://bassamkhan.netlify.app/).
+You can view my Portfolio at [Resume Site](https://portfolio.snowdensvault.fyi/).
