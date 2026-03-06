@@ -45,7 +45,7 @@ export default defineThemeConfig({
   locale: 'en',
   mode: 'dark',
   modeToggle: true,
-  colorScheme: 'scheme-mono',
+  colorScheme: 'scheme-nord',
   openGraphImage: '/opengraphcimg.png',
   postsPerPage: 4,
   projectsPerPage: 3,
