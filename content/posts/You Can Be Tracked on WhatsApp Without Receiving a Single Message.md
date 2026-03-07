@@ -32,7 +32,7 @@ Over time, this makes it possible to infer user behavior, such as when someone i
 
 The only practical mitigation is enabling restrictions on messages from unknown numbers. Even then, the issue remains exploitable by anyone already present in the victim’s contact list, meaning the protection is incomplete.
 
-## How to Replicate this
+# How to Replicate this
 ---------------------
 
 The guy who posted this also posted a PoC on GitHub. However, I’m also going to summarize the steps here:
@@ -61,7 +61,7 @@ nvm install 20
 nvm use 20
 ```
 
-### How to run it
+# How to run it
 
 Since it’s a PoC, it’s still a bit buggy at times; however, to start it we will use:
 
