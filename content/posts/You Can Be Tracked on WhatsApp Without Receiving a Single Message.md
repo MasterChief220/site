@@ -5,7 +5,6 @@ publishedDate: 2026-03-06
 author: Bassam Khan
 tags:
   - sidechannel
-  - surveillance
   - Cybersecurity
   - privacy
   - OSINT
